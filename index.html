@@ -1,97 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KI Wholesale - Premium Products Direct from Suppliers</title>
-  <style>
-    body { margin:0; font-family: Arial, sans-serif; }
-    #header-placeholder { width: 100%; }
-
-    /* NEW: Style for the category link button (orange theme) */
-    .category-link {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 14px 32px;
-      background: #FF6700;
-      color: white;
-      font-size: 18px;
-      font-weight: 600;
-      text-decoration: none;
-      border-radius: 50px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(255,103,0,0.25);
-    }
-    .category-link:hover {
-      background: #e55a00;
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(255,103,0,0.3);
-    }
-    .category-link:active {
-      transform: translateY(0);
-    }
-  </style>
-</head>
-<body>
-
-  <!-- HEADER WILL LOAD HERE -->
-  <div id="header-placeholder"></div>
-
-  <!-- Your main content starts here -->
-  <main style="padding:40px; text-align:center;">
-    <h1>Welcome to KI Wholesale</h1>
-    <p>Professional B2B site like MadeInChina — built 100% on GitHub Pages.</p>
-    <p>Header is loaded from separate file. Everything works!</p>
-
-    <!-- NEW: Link to categories page -->
-    <a href="categories.html" class="category-link">
-      Browse All Categories →
-    </a>
-  </main>
-
-  <script>
-    // Load header.html (HTML + CSS + JS all from one file)
-    fetch('header.html')
-      .then(response => response.text())
-      .then(data => {
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(data, 'text/html');
-
-        // Add styles to head
-        const styles = doc.querySelector('style');
-        if (styles) document.head.appendChild(styles);
-
-        // Insert header HTML
-        document.getElementById('header-placeholder').innerHTML = doc.body.innerHTML;
-
-        // Run the script from header.html
-        const scripts = doc.querySelectorAll('script');
-        scripts.forEach(oldScript => {
-          const newScript = document.createElement('script');
-          newScript.textContent = oldScript.textContent;
-          document.body.appendChild(newScript);
-        });
-      })
-      .catch(err => console.error('Header load error:', err));
-
-// Fetch categories – add this
-  <script>
-    fetch('categories.html')
-      .then(response => response.text())
-      .then(data => {
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(data, 'text/html');
-        if (doc.querySelector('style')) document.head.appendChild(doc.querySelector('style'));
-        document.getElementById('categories-placeholder').innerHTML = doc.body.innerHTML;
-        const scripts = doc.querySelectorAll('script');
-        scripts.forEach(s => {
-          const ns = document.createElement('script');
-          ns.textContent = s.textContent;
-          document.body.appendChild(ns);
-        });
-      });
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ki Wholesalers - AFRICA WHOLESALERS</title>
     
-  </script>
+    <!-- Tailwind CSS CDN - makes the site look modern, responsive & professional instantly -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for professional icons (cart, message, etc.) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Font: Poppins - clean, premium, professional look (exactly what big wholesale sites use) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Poppins', system-ui, sans-serif; }
+        
+        /* Orange theme colors (you can change the hex codes anytime) */
+        .primary-orange { color: #f97316; }
+        .bg-primary-orange { background-color: #f97316; }
+        
+        /* Makes the central banner look exactly like the red one in your screenshot, but orange */
+        .hero-gradient {
+            background: linear-gradient(135deg, #f97316, #fb923c);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- ==================== TOP NAV BAR (exactly like Made-in-China) ==================== -->
+    <header class="bg-white border-b shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between py-4">
+                
+                <!-- Logo + Tagline -->
+                <div class="flex items-center gap-4">
+                    <div class="w-11 h-11 bg-[#f97316] rounded-2xl flex items-center justify-center text-white text-4xl font-bold shadow-inner">K</div>
+                    <div>
+                        <h1 class="text-3xl font-bold tracking-tighter primary-orange">Ki Wholesalers</h1>
+                        <p class="text-xs font-semibold tracking-[2px] text-orange-600 -mt-1">AFRICA WHOLESALERS</p>
+                    </div>
+                </div>
+
+                <!-- Search Bar (exact same style) -->
+                <div class="flex-1 max-w-xl mx-8">
+                    <div class="relative flex">
+                        <!-- Products dropdown -->
+                        <button onclick="alert('Products dropdown would open here in full version')" 
+                                class="bg-gray-100 hover:bg-gray-200 px-6 rounded-l-2xl text-sm font-medium flex items-center gap-2 border-r border-gray-300">
+                            <span>Products</span>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        
+                        <!-- Search input -->
+                        <input type="text" id="search" 
+                               class="flex-1 border border-gray-300 focus:border-orange-500 py-3.5 px-5 text-base focus:outline-none"
+                               placeholder="Enter a keyword to search products">
+                        
+                        <!-- Search button -->
+                        <button onclick="performSearch()" 
+                                class="bg-[#f97316] hover:bg-orange-600 text-white px-8 rounded-r-2xl font-medium transition-colors">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right side icons (exact match) -->
+                <div class="flex items-center gap-8 text-sm">
+                    <a href="#" class="flex flex-col items-center hover:text-orange-600 transition-colors">
+                        <i class="fas fa-file-alt text-2xl"></i>
+                        <span class="text-xs mt-1 font-medium">Post RFQ</span>
+                    </a>
+                    <a href="#" class="flex flex-col items-center hover:text-orange-600 transition-colors">
+                        <i class="fas fa-envelope text-2xl"></i>
+                        <span class="text-xs mt-1 font-medium">Messages</span>
+                    </a>
+                    <a href="#" class="flex flex-col items-center hover:text-orange-600 transition-colors relative">
+                        <i class="fas fa-shopping-basket text-2xl"></i>
+                        <span class="text-xs mt-1 font-medium">Inquiry Basket</span>
+                        <span class="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full">3</span>
+                    </a>
+                    <a href="#" class="flex items-center gap-3 hover:text-orange-600">
+                        <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-orange-600"></i>
+                        </div>
+                        <div class="text-xs leading-tight">
+                            <div class="font-semibold">Sign in</div>
+                            <div class="text-gray-500">/ Join</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECONDARY NAV BAR -->
+        <nav class="bg-gray-900 text-white py-3 text-sm">
+            <div class="max-w-7xl mx-auto px-6 flex items-center gap-10 font-medium">
+                <a href="#" class="flex items-center gap-2 hover:text-orange-400">
+                    <i class="fas fa-bars"></i> All Categories
+                </a>
+                <a href="#" class="hover:text-orange-400">Top-ranking Products</a>
+                <a href="#" class="hover:text-orange-400">Video Channel</a>
+                <a href="#" class="hover:text-orange-400">Secured Trading Service</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ==================== MAIN CONTENT (flex layout like your screenshot) ==================== -->
+    <div class="max-w-7xl mx-auto px-6 py-8 flex gap-8">
+        
+        <!-- LEFT: CATEGORIES SIDEBAR -->
+        <div class="w-64 bg-white rounded-3xl shadow p-6 h-fit">
+            <h2 class="font-semibold text-xl mb-5 flex items-center gap-3">
+                <i class="fas fa-list text-orange-600"></i> Categories
+            </h2>
+            <ul class="space-y-4 text-sm">
+                <li><a href="#" class="hover:text-orange-600 block">Manufacturing &amp; Processing Machinery</a></li>
+                <li><a href="#" class="hover:text-orange-600 block">Consumer Electronics</a></li>
+                <li><a href="#" class="hover:text-orange-600 block">Industrial Equipment &amp; Components</a></li>
+                <li><a href="#" class="hover:text-orange-600 block">Electrical &amp; Electronics</a></li>
+                <li><a href="#" class="hover:text-orange-600 block">Construction &amp; Decoration</a></li>
+                <li><a href="#" class="hover:text-orange-600 block">Light Industry &amp; Daily Use</a></li>
+                <li><a href="#" class="hover:text-orange-600 block">Auto, Motorcycle Parts &amp; Accessories</a></li>
+                <li><a href="#" class="hover:text-orange-600 block">Apparel &amp; Accessories</a></li>
+                <li><a href="#" class="hover:text-orange-600 block">Lights &amp; Lighting</a></li>
+                <li><a href="#" class="hover:text-orange-600 block">Sporting Goods &amp; Recreation</a></li>
+            </ul>
+        </div>
+
+        <!-- CENTER: BIG HERO BANNER + PRODUCT SHOWCASE -->
+        <div class="flex-1">
+            
+            <!-- Promo banner (orange version of "Star Buyers' Day") -->
+            <div class="hero-gradient text-white rounded-3xl p-8 mb-8 flex justify-between items-center">
+                <div>
+                    <p class="uppercase tracking-[3px] text-orange-100 text-sm font-medium">Africa Star Wholesalers</p>
+                    <h2 class="text-5xl font-bold leading-none mt-2">Keep sourcing Products</h2>
+                    <p class="mt-4 text-orange-100 text-xl">Premium Samples • Low MOQ • Ready Stock</p>
+                    <button onclick="alert('Browse all products page would open here')" 
+                            class="mt-8 bg-white text-orange-600 font-semibold px-10 py-4 rounded-2xl hover:bg-orange-50 transition-colors">
+                        Browse Now
+                    </button>
+                </div>
+                <div class="hidden lg:block text-[120px] opacity-20">📦</div>
+            </div>
+
+            <!-- Product cards row (exactly like the 4 keyboards in your screenshot) -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all">
+                    <img src="https://picsum.photos/id/1015/400/250" alt="Wireless Keyboard" class="w-full h-48 object-cover">
+                    <div class="p-5">
+                        <p class="font-semibold text-base line-clamp-2">Wireless Mechanical Keyboard RGB</p>
+                        <p class="text-orange-600 font-bold mt-2">From $9.99</p>
+                    </div>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all">
+                    <img src="https://picsum.photos/id/201/400/250" alt="Membrane Keypad" class="w-full h-48 object-cover">
+                    <div class="p-5">
+                        <p class="font-semibold text-base line-clamp-2">Industrial Membrane Keypad</p>
+                        <p class="text-orange-600 font-bold mt-2">From $4.50</p>
+                    </div>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all">
+                    <img src="https://picsum.photos/id/301/400/250" alt="Laptop" class="w-full h-48 object-cover">
+                    <div class="p-5">
+                        <p class="font-semibold text-base line-clamp-2">15.6" Business Laptop</p>
+                        <p class="text-orange-600 font-bold mt-2">From $199</p>
+                    </div>
+                </div>
+                
+                <!-- Card 4 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all">
+                    <img src="https://picsum.photos/id/401/400/250" alt="RGB Keyboard" class="w-full h-48 object-cover">
+                    <div class="p-5">
+                        <p class="font-semibold text-base line-clamp-2">Gaming RGB Keyboard</p>
+                        <p class="text-orange-600 font-bold mt-2">From $12.99</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT: YOU MAY LIKE SIDEBAR (exact same as screenshot) -->
+        <div class="w-80 bg-white rounded-3xl shadow p-6 h-fit">
+            <h3 class="font-semibold text-xl mb-6">You May Like</h3>
+            
+            <div class="space-y-8">
+                <!-- Item 1 -->
+                <div class="flex gap-4">
+                    <img src="https://picsum.photos/id/1015/100/100" class="w-20 h-20 object-cover rounded-2xl" alt="">
+                    <div>
+                        <p class="font-medium text-sm leading-tight">Computer Keyboard</p>
+                        <p class="text-xs text-gray-500 mt-1">34,000+ Products</p>
+                        <p class="text-orange-600 text-sm font-bold mt-2">From $8.50</p>
+                    </div>
+                </div>
+                
+                <!-- Item 2 -->
+                <div class="flex gap-4">
+                    <img src="https://picsum.photos/id/201/100/100" class="w-20 h-20 object-cover rounded-2xl" alt="">
+                    <div>
+                        <p class="font-medium text-sm leading-tight">Membrane Keypad</p>
+                        <p class="text-xs text-gray-500 mt-1">26,000+ Products</p>
+                        <p class="text-orange-600 text-sm font-bold mt-2">From $3.20</p>
+                    </div>
+                </div>
+                
+                <!-- Item 3 -->
+                <div class="flex gap-4">
+                    <img src="https://picsum.photos/id/301/100/100" class="w-20 h-20 object-cover rounded-2xl" alt="">
+                    <div>
+                        <p class="font-medium text-sm leading-tight">Control Panel</p>
+                        <p class="text-xs text-gray-500 mt-1">470,000+ Products</p>
+                        <p class="text-orange-600 text-sm font-bold mt-2">From $15</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Simple footer (you can expand later) -->
+    <footer class="bg-gray-900 text-white py-8 text-center text-sm">
+        © 2026 Ki Wholesalers • Connecting Africa with Global Suppliers
+    </footer>
+
+    <script>
+        // Tailwind custom color configuration (orange theme)
+        tailwind.config = {
+            content: [],
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#f97316'
+                    }
+                }
+            }
+        }
+
+        // Fake search function (you can expand later)
+        function performSearch() {
+            const query = document.getElementById('search').value;
+            if (query) {
+                alert('Searching for: ' + query + '\n\n(In the full version this would show product results)');
+            }
+        }
+    </script>
 </body>
 </html>
