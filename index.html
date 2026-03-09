@@ -73,6 +73,36 @@
         });
       })
       .catch(err => console.error('Header load error:', err));
+
+// 2. Load categories.html and extract + insert ONLY the sidebar
+    fetch('categories.html')
+      .then(response => response.text())
+      .then(data => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(data, 'text/html');
+
+        // Append categories styles to head (so sidebar looks correct)
+        const catStyles = doc.querySelector('style');
+        if (catStyles) document.head.appendChild(catStyles.cloneNode(true));
+
+        // Extract the sidebar HTML
+        const sidebar = doc.querySelector('.sidebar');
+        if (sidebar) {
+          document.getElementById('sidebar-placeholder').innerHTML = sidebar.outerHTML;
+        } else {
+          console.error('Sidebar not found in categories.html');
+        }
+
+        // Re-execute the category JS (expand/collapse)
+        const catScript = doc.querySelector('script');
+        if (catScript) {
+          const newScript = document.createElement('script');
+          newScript.textContent = catScript.textContent;
+          document.body.appendChild(newScript);
+        }
+      })
+      .catch(err => console.error('Categories sidebar load error:', err));
+    
   </script>
 </body>
 </html>
