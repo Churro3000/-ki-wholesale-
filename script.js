@@ -41,4 +41,5 @@ document.addEventListener('DOMContentLoaded', () => {
     loadFragment('categories.html',    'categories-placeholder');
     loadFragment('you-may-like.html',  'you-may-like-placeholder');
     loadFragment('hero-slideshow.html','hero-placeholder');   // ← added this line for the new slideshow section
+    loadFragment('bottom-categories.html', 'bottom-categories-placeholder'); // 1 line for bottom categories
 });
