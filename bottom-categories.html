@@ -1,21 +1,19 @@
 <!-- bottom-categories.html -->
-<!-- Full-viewport-width horizontal "Browse Categories" - forced fit for desktop -->
+<!-- Balanced full-width horizontal "Browse Categories" with equal tiny left/right space -->
 
-<div class="bg-white py-12 border-t border-gray-100" style="width:100vw !important; margin-left: calc(-50vw + 50%) !important; margin-right: calc(-50vw + 50%) !important; box-sizing: border-box !important; padding-left: 0 !important; padding-right: 0 !important;">
+<div class="bg-white py-12 border-t border-gray-100 relative left-1/2 -ml-[50vw] w-screen">
     
-    <!-- Inner wrapper - controls content padding but keeps full bleed -->
-    <div style="max-width: none !important; width: 100% !important; margin: 0 auto !important; padding-left: 1.5rem !important; padding-right: 0.75rem !important; box-sizing: border-box !important;">
+    <!-- Inner content wrapper - centers and constrains padding symmetrically -->
+    <div class="max-w-none mx-auto px-4 lg:px-8">  <!-- symmetric padding here if you want more control -->
         
-        <!-- Title - left-aligned, full bleed feel -->
-        <h2 class="text-3xl font-semibold text-gray-900 mb-8" style="margin-left: 1.5rem !important; margin-right: 0 !important;">
+        <!-- Title - centered or left, but with symmetric context -->
+        <h2 class="text-3xl font-semibold text-gray-900 mb-8 text-left">
             Browse Categories
         </h2>
         
-        <!-- Horizontal scroll - symmetric tiny padding on both sides -->
-<div class="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide"
-     style="padding-left: 1rem !important; padding-right: 1rem !important; margin-left: 0 !important; margin-right: 0 !important; width: 100% !important; box-sizing: border-box !important;">
+        <!-- Horizontal scroll container - EQUAL tiny padding left & right -->
+        <div class="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide pl-4 pr-4">
            
-            <!-- Bigger cards: w-72 instead of w-64, taller images -->
             <!-- 1. Household -->
             <a href="#" class="group flex-shrink-0 w-72 snap-start transition-all">
                 <div class="bg-white overflow-hidden shadow-sm border border-gray-100 group-hover:shadow-2xl transition-all duration-300">
