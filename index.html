@@ -25,87 +25,110 @@
         <!-- Left sidebar -->
         <div id="categories-placeholder"></div>
         
-        <!-- Promo banner - replaced with image slideshow -->
-<div class="hero-gradient rounded-3xl p-8 mb-8 overflow-hidden relative h-[320px] lg:h-[380px]">
-    
-    <!-- Slideshow container -->
-    <div id="slideshow" class="absolute inset-0">
-        <!-- Slide 1 -->
-        <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
-            <img src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
-                 alt="Slide 1 - Wholesale products"
+        <!-- Center content - now a large slideshow like Made-in-China central promo area -->
+<div class="relative mb-8 rounded-3xl overflow-hidden shadow-lg" style="height: 420px; min-height: 380px;">
+
+    <!-- Slideshow wrapper with unique ID to avoid conflicts -->
+    <div id="kiwholesalers-hero-slides" class="absolute inset-0">
+        
+        <!-- Slide 1 example -->
+        <div class="slide-item absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+            <img src="https://images.unsplash.com/photo-1586528116022-7ea5ddfc0d6a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+                 alt="Product showcase 1"
                  class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent flex items-center justify-center">
+                <div class="text-center text-white px-8">
+                    <h2 class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight drop-shadow-lg">
+                        Keep sourcing <span class="text-orange-400">Keyboards</span>
+                    </h2>
+                    <p class="mt-4 text-xl md:text-2xl opacity-90">Premium Samples • Low MOQ • Ready Stock</p>
+                </div>
+            </div>
         </div>
         
         <!-- Slide 2 -->
-        <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
-            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
-                 alt="Slide 2 - Bulk goods"
+        <div class="slide-item absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+            <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+                 alt="Product showcase 2"
                  class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent flex items-center justify-center">
+                <div class="text-center text-white px-8">
+                    <h2 class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight drop-shadow-lg">
+                        Keep sourcing <span class="text-orange-400">Electronics</span>
+                    </h2>
+                    <p class="mt-4 text-xl md:text-2xl opacity-90">Bulk Deals • Fast Shipping • Quality Assured</p>
+                </div>
+            </div>
         </div>
         
         <!-- Slide 3 -->
-        <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
-            <img src="https://images.unsplash.com/photo-1581235720704-06d1018152dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
-                 alt="Slide 3 - Africa trade"
+        <div class="slide-item absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+            <img src="https://images.unsplash.com/photo-1581235720704-06d1018152dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+                 alt="Product showcase 3"
                  class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent flex items-center justify-center">
+                <div class="text-center text-white px-8">
+                    <h2 class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight drop-shadow-lg">
+                        Keep sourcing <span class="text-orange-400">Machinery</span>
+                    </h2>
+                    <p class="mt-4 text-xl md:text-2xl opacity-90">Industrial Grade • Competitive Pricing</p>
+                </div>
+            </div>
         </div>
-        
-        <!-- Slide 4 (you can add more) -->
-        <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
-            <img src="https://images.unsplash.com/photo-1556740714-a8395b3a74dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
-                 alt="Slide 4 - Global sourcing"
-                 class="w-full h-full object-cover">
-        </div>
+
+        <!-- Add more slides by copying the <div class="slide-item ..."> block above -->
     </div>
 
-    <!-- Optional subtle overlay gradient (keeps branding feel) -->
-    <div class="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent pointer-events-none"></div>
-
-    <!-- CSS for slideshow (scoped with container classes) -->
+    <!-- Scoped CSS - no global impact -->
     <style>
-        #slideshow .slide {
+        #kiwholesalers-hero-slides .slide-item {
             opacity: 0;
         }
-        #slideshow .slide.active {
+        #kiwholesalers-hero-slides .slide-item.active {
             opacity: 1;
         }
-        #slideshow img {
+        #kiwholesalers-hero-slides img {
             object-position: center;
         }
     </style>
 
-    <!-- JavaScript for slideshow (self-contained, no global pollution) -->
+    <!-- Scoped JS - fully isolated IIFE, unique names, no conflicts -->
     <script>
         (function() {
-            const container = document.getElementById('slideshow');
-            if (!container) return;
+            const slider = document.getElementById('kiwholesalers-hero-slides');
+            if (!slider) return;
 
-            const slides = container.querySelectorAll('.slide');
-            if (slides.length === 0) return;
+            const slides = slider.querySelectorAll('.slide-item');
+            if (slides.length < 1) return;
 
-            let current = 0;
-            const total = slides.length;
+            let index = 0;
+            const count = slides.length;
 
-            function showSlide(index) {
-                slides.forEach((s, i) => {
-                    s.classList.toggle('active', i === index);
+            function activateSlide(n) {
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('active', i === n);
                 });
             }
 
-            function nextSlide() {
-                current = (current + 1) % total;
-                showSlide(current);
+            function advance() {
+                index = (index + 1) % count;
+                activateSlide(index);
             }
 
-            // Show first slide immediately
-            showSlide(0);
+            // Start with first slide visible
+            activateSlide(0);
 
-            // Auto advance every 5 seconds
-            const interval = setInterval(nextSlide, 5000);
+            // Auto-rotate every 5.5 seconds
+            const timer = setInterval(advance, 5500);
 
-            // Clean up when element is removed (optional safety)
-            container.addEventListener('remove', () => clearInterval(interval), { once: true });
+            // Optional: stop when user leaves page (cleanup)
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) {
+                    clearInterval(timer);
+                } else {
+                    setTimeout(() => { activateSlide(index); }, 100);
+                }
+            }, { once: false });
         })();
     </script>
 </div>
