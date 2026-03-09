@@ -41,3 +41,27 @@ document.addEventListener('DOMContentLoaded', () => {
     loadFragment('categories.html',    'categories-placeholder');
     loadFragment('you-may-like.html',  'you-may-like-placeholder');
 });
+
+// Simple automatic slideshow
+let slideIndex = 0;
+function showSlides() {
+    const slides = document.getElementsByClassName("slide");
+    if (slides.length === 0) return;
+
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("active");
+    }
+
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1; }
+
+    slides[slideIndex - 1].classList.add("active");
+    setTimeout(showSlides, 5000); // change image every 5 seconds
+}
+
+// Start slideshow when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    // ... your existing loadFragment calls ...
+    
+    showSlides(); // start the slideshow
+});
