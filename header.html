@@ -12,22 +12,23 @@
                 </div>
             </div>
 
-            <!-- Search Bar - Fully rounded pill style -->
+            <!-- Search Bar - Fully rounded pill style + stronger forced rounding -->
 <div class="flex-1 max-w-3xl mx-8">
-    <div class="relative flex rounded-full overflow-hidden border border-gray-300 focus-within:border-orange-500 focus-within:ring-2 focus-within:ring-orange-200 transition-all">
-        
+    <div class="relative flex rounded-full overflow-hidden border border-gray-300 focus-within:border-orange-500 focus-within:ring-2 focus-within:ring-orange-200 transition-all"
+         style="border-radius: 9999px !important; /* ultra-strong pill shape override */">
+       
         <!-- Products dropdown button -->
         <button onclick="alert('Products dropdown...')"
                 class="bg-gray-100 hover:bg-gray-200 px-6 text-sm font-medium flex items-center gap-2 border-r border-gray-300 min-w-[140px] justify-between">
             <span>Products</span>
             <i class="fas fa-chevron-down text-xs"></i>
         </button>
-        
+       
         <!-- Search input -->
         <input type="text" id="search"
                class="flex-1 py-3.5 px-5 text-base focus:outline-none bg-white"
                placeholder="Enter a keyword to search products">
-        
+       
         <!-- Search button -->
         <button onclick="performSearch()"
                 class="bg-[#f97316] hover:bg-orange-600 text-white px-8 font-medium transition-colors flex items-center justify-center min-w-[80px]">
