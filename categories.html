@@ -1,300 +1,121 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KI Wholesale - All Categories</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-      background: #f8f9fa;
-      color: #333;
-    }
-    #header-placeholder {
-      width: 100%;
-    }
-
-    /* Main layout: flex for sidebar + content */
-    .main-container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 20px;
-      display: flex;
-      gap: 24px;
-    }
-    .sidebar {
-      width: 260px;                    /* ~22-25% feel, fixed for clean look */
-      flex-shrink: 0;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-      overflow: hidden;
-    }
-    .sidebar h2 {
-      margin: 0;
-      padding: 16px 20px;
-      background: #FF6700;
-      color: white;
-      font-size: 18px;
-      font-weight: 600;
-      text-align: center;
-    }
-    .category-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    .category-item {
-      border-bottom: 1px solid #eee;
-    }
-    .category-main {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 14px 20px;
-      cursor: pointer;
-      font-weight: 600;
-      color: #222;
-      transition: all 0.2s;
-    }
-    .category-main:hover,
-    .category-main.active {
-      background: #fff5f0;
-      color: #FF6700;
-    }
-    .arrow {
-      font-size: 12px;
-      transition: transform 0.3s;
-    }
-    .category-main.active .arrow {
-      transform: rotate(180deg);
-    }
-    .sub-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease-out;
-      background: #fafafa;
-    }
-    .sub-list.open {
-      max-height: 600px;               /* large enough for most; adjust if needed */
-    }
-    .sub-item a {
-      display: block;
-      padding: 10px 20px 10px 40px;    /* indent subs */
-      color: #555;
-      text-decoration: none;
-      font-size: 15px;
-      transition: all 0.2s;
-    }
-    .sub-item a:hover {
-      background: #f0f0f0;
-      color: #FF6700;
-      padding-left: 48px;
-    }
-
-    /* Main content area */
-    .content {
-      flex: 1;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-      padding: 24px;
-      min-height: 600px;
-    }
-    .content h1 {
-      margin-top: 0;
-      color: #222;
-    }
-
-    /* Mobile responsive */
-    @media (max-width: 992px) {
-      .main-container {
-        flex-direction: column;
-        padding: 16px;
-      }
-      .sidebar {
-        width: 100%;
-      }
-      .sub-item a {
-        padding-left: 32px;
-      }
-      .sub-item a:hover {
-        padding-left: 36px;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Header loads here -->
-  <div id="header-placeholder"></div>
-
-  <div class="main-container">
-    <!-- Left Sidebar: Categories -->
-    <aside class="sidebar">
-      <h2>All Categories</h2>
-      <ul class="category-list">
-        <li class="category-item">
-          <div class="category-main">
-            <span>Manufacturing & Processing Machinery</span>
-            <span class="arrow">▼</span>
-          </div>
-          <ul class="sub-list">
-            <li class="sub-item"><a href="#">Agricultural Machinery</a></li>
-            <li class="sub-item"><a href="#">Food & Beverage Machinery</a></li>
-            <li class="sub-item"><a href="#">Metal Processing Machinery</a></li>
-            <li class="sub-item"><a href="#">Laser Equipment</a></li>
-            <li class="sub-item"><a href="#">Moulds & Dies</a></li>
-            <li class="sub-item"><a href="#">More...</a></li>
-          </ul>
-        </li>
-        <li class="category-item">
-          <div class="category-main">
-            <span>Consumer Electronics</span>
-            <span class="arrow">▼</span>
-          </div>
-          <ul class="sub-list">
-            <li class="sub-item"><a href="#">Mobile Phones & Accessories</a></li>
-            <li class="sub-item"><a href="#">Wearable Devices</a></li>
-            <li class="sub-item"><a href="#">Audio & Video Equipment</a></li>
-            <li class="sub-item"><a href="#">Smart Home Devices</a></li>
-          </ul>
-        </li>
-        <li class="category-item">
-          <div class="category-main">
-            <span>Electrical & Electronics</span>
-            <span class="arrow">▼</span>
-          </div>
-          <ul class="sub-list">
-            <li class="sub-item"><a href="#">Batteries & Chargers</a></li>
-            <li class="sub-item"><a href="#">Switches & Sockets</a></li>
-            <li class="sub-item"><a href="#">Wires & Cables</a></li>
-            <li class="sub-item"><a href="#">Generators & Alternators</a></li>
-          </ul>
-        </li>
-        <li class="category-item">
-          <div class="category-main">
-            <span>Construction & Decoration</span>
-            <span class="arrow">▼</span>
-          </div>
-          <ul class="sub-list">
-            <li class="sub-item"><a href="#">Tiles & Flooring</a></li>
-            <li class="sub-item"><a href="#">Doors & Windows</a></li>
-            <li class="sub-item"><a href="#">Sanitary Ware</a></li>
-            <li class="sub-item"><a href="#">Wallpapers & Wall Coatings</a></li>
-          </ul>
-        </li>
-        <li class="category-item">
-          <div class="category-main">
-            <span>Auto, Motorcycle Parts & Accessories</span>
-            <span class="arrow">▼</span>
-          </div>
-          <ul class="sub-list">
-            <li class="sub-item"><a href="#">Car Parts</a></li>
-            <li class="sub-item"><a href="#">Motorcycle Parts</a></li>
-            <li class="sub-item"><a href="#">Tires & Wheels</a></li>
-          </ul>
-        </li>
-        <li class="category-item">
-          <div class="category-main">
-            <span>Apparel & Accessories</span>
-            <span class="arrow">▼</span>
-          </div>
-          <ul class="sub-list">
-            <li class="sub-item"><a href="#">Men's Clothing</a></li>
-            <li class="sub-item"><a href="#">Women's Clothing</a></li>
-            <li class="sub-item"><a href="#">Bags & Luggage</a></li>
-            <li class="sub-item"><a href="#">Fashion Accessories</a></li>
-          </ul>
-        </li>
-        <li class="category-item">
-          <div class="category-main">
-            <span>Lights & Lighting</span>
-            <span class="arrow">▼</span>
-          </div>
-          <ul class="sub-list">
-            <li class="sub-item"><a href="#">LED Lights</a></li>
-            <li class="sub-item"><a href="#">Indoor Lighting</a></li>
-            <li class="sub-item"><a href="#">Outdoor Lighting</a></li>
-          </ul>
-        </li>
-        <li class="category-item">
-          <div class="category-main">
-            <span>Health & Medicine</span>
-            <span class="arrow">▼</span>
-          </div>
-          <ul class="sub-list">
-            <li class="sub-item"><a href="#">Medical Devices</a></li>
-            <li class="sub-item"><a href="#">Pharmaceuticals</a></li>
-            <li class="sub-item"><a href="#">Beauty & Personal Care</a></li>
-          </ul>
-        </li>
-        <!-- Add more main categories as needed -->
-      </ul>
-    </aside>
-
-    <!-- Right/Main Content Area (placeholder for now) -->
-    <main class="content">
-      <h1>Browse Categories</h1>
-      <p>Select a category on the left to explore thousands of wholesale products from trusted suppliers.</p>
-      <p>Coming soon: Featured products, hot deals, supplier lists, and more in this area.</p>
-      
-      <!-- You can add product grids, banners, etc. here later -->
-    </main>
+<!-- categories.html - LEFT SIDEBAR CATEGORY LIST (all in one file) -->
+<aside class="ki-categories">
+  <div class="categories-header">
+    <h2>Browse Categories</h2>
   </div>
+  <ul class="category-list">
+    <li><a href="#">Manufacturing & Processing Machinery</a></li>
+    <li><a href="#">Consumer Electronics</a></li>
+    <li><a href="#">Industrial Equipment & Components</a></li>
+    <li><a href="#">Electrical & Electronics</a></li>
+    <li><a href="#">Construction & Decoration</a></li>
+    <li><a href="#">Light Industry & Daily Use</a></li>
+    <li><a href="#">Auto, Motorcycle Parts & Accessories</a></li>
+    <li><a href="#">Apparel & Accessories</a></li>
+    <li><a href="#">Lights & Lighting</a></li>
+    <li><a href="#">Sporting Goods & Recreation</a></li>
+    <li><a href="#">Transportation</a></li>
+    <li><a href="#">Arts & Crafts</a></li>
+    <li><a href="#">Health & Medicine</a></li>
+    <li><a href="#">Packaging & Printing</a></li>
+    <li><a href="#">Computer Products</a></li>
+    <li><a href="#">Chemicals</a></li>
+    <li><a href="#">Tools & Hardware</a></li>
+    <li><a href="#">Agriculture & Food</a></li>
+    <li><a href="#">Bags, Cases & Boxes</a></li>
+    <li><a href="#">Furniture</a></li>
+    <li class="more-link"><a href="#">More Categories →</a></li>
+  </ul>
+</aside>
 
-  <script>
-    // Load header from header.html (same as index.html)
-    fetch('header.html')
-      .then(response => response.text())
-      .then(data => {
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(data, 'text/html');
+<style>
+  :root {
+    --orange: #FF6700;
+    --gray: #f8f8f8;
+    --dark: #333;
+  }
 
-        // Add header styles
-        const styles = doc.querySelector('style');
-        if (styles) document.head.appendChild(styles.cloneNode(true));
+  .ki-categories {
+    width: 240px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    position: sticky;
+    top: 100px; /* below header ~80px + some space */
+    align-self: flex-start;
+  }
 
-        // Insert header HTML
-        document.getElementById('header-placeholder').innerHTML = doc.body.innerHTML;
+  .categories-header {
+    background: var(--orange);
+    color: white;
+    padding: 14px 16px;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    border-bottom: 1px solid var(--orange);
+  }
 
-        // Execute header's script
-        const scripts = doc.querySelectorAll('script');
-        scripts.forEach(oldScript => {
-          const newScript = document.createElement('script');
-          newScript.textContent = oldScript.textContent;
-          document.body.appendChild(newScript);
-        });
-      })
-      .catch(err => console.error('Header load error:', err));
+  .category-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 
-    // Category expand/collapse JS
-    document.addEventListener('DOMContentLoaded', () => {
-      const mains = document.querySelectorAll('.category-main');
+  .category-list li {
+    border-bottom: 1px solid #f0f0f0;
+  }
 
-      mains.forEach(main => {
-        main.addEventListener('click', () => {
-          const subList = main.nextElementSibling;
-          const isOpen = subList.classList.contains('open');
+  .category-list a {
+    display: block;
+    padding: 12px 20px;
+    color: var(--dark);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
 
-          // Close all others first (accordion style)
-          document.querySelectorAll('.sub-list.open').forEach(list => {
-            if (list !== subList) {
-              list.classList.remove('open');
-              list.previousElementSibling.classList.remove('active');
-            }
-          });
+  .category-list a:hover {
+    background: var(--gray);
+    color: var(--orange);
+    padding-left: 26px; /* slight indent on hover for nice effect */
+  }
 
-          // Toggle current
-          subList.classList.toggle('open');
-          main.classList.toggle('active');
-        });
+  .more-link a {
+    font-weight: 600;
+    color: var(--orange);
+    text-align: center;
+  }
+
+  .more-link a:hover {
+    background: #fff5ef;
+    padding-left: 20px;
+  }
+
+  /* Mobile – stack or hide if needed */
+  @media (max-width: 992px) {
+    .ki-categories {
+      width: 100%;
+      position: static;
+      margin: 20px 0;
+      border-radius: 0;
+    }
+  }
+</style>
+
+<script>
+  // Optional: simple console log or future interactions
+  document.addEventListener('DOMContentLoaded', () => {
+    console.log('✅ KI Wholesale categories sidebar loaded');
+    
+    // Example: if we add click tracking later
+    document.querySelectorAll('.category-list a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        // e.preventDefault(); // uncomment if we want to handle clicks via JS later
+        console.log('Category clicked:', link.textContent);
       });
     });
-  </script>
-</body>
-</html>
+  });
+</script>
