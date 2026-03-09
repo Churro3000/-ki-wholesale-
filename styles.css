@@ -1,6 +1,4 @@
-/* ============================================= */
 /* styles.css - Custom styles + Tailwind support */
-/* ============================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
@@ -37,4 +35,35 @@ body {
         padding-left: 3rem;
         padding-right: 3rem;
     }
+}
+
+/* Slideshow styles */
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from { opacity: 0.4 }
+    to   { opacity: 1 }
 }
