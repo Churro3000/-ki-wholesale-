@@ -1,23 +1,22 @@
 <!-- bottom-categories.html -->
-<!-- Centered horizontal "Browse Categories" – all cards fit screen with equal left/right space -->
+<!-- Centered horizontal "Browse Categories" – equal left/right space, thin grey outline -->
 
 <div class="bg-white py-12 border-t border-gray-100">
     
-    <!-- Wrapper with reasonable max-width + symmetric padding -->
-    <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Wrapper: centered with max-width for perfect fit -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <!-- Title -->
-        <h2 class="text-3xl font-semibold text-gray-900 mb-8">
+        <!-- Title – centered for balance -->
+        <h2 class="text-3xl font-semibold text-gray-900 mb-8 text-center">
             Browse Categories
         </h2>
         
-        <!-- Horizontal scroll container – symmetric padding, reduced gap, smaller cards -->
-        <div class="flex gap-4 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide px-4">
+        <!-- Horizontal container – centered, equal padding left/right -->
+        <div class="flex justify-center gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide px-4 lg:px-0">
            
-            <!-- Smaller cards: w-64 (256px) – all 6 fit most desktops without scroll -->
-            <!-- 1. Household -->
+            <!-- 1. Household – thin grey outline added -->
             <a href="#" class="group flex-shrink-0 w-64 snap-start transition-all">
-                <div class="bg-white overflow-hidden shadow-sm border border-gray-100 group-hover:shadow-2xl transition-all duration-300">
+                <div class="bg-white overflow-hidden shadow-sm border border-gray-200 group-hover:shadow-2xl transition-all duration-300">
                     <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450&q=80"
                          alt="Household"
                          class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500">
@@ -29,19 +28,19 @@
 
             <!-- 2. Electricals -->
             <a href="#" class="group flex-shrink-0 w-64 snap-start transition-all">
-                <div class="bg-white overflow-hidden shadow-sm border border-gray-100 group-hover:shadow-2xl transition-all duration-300">
+                <div class="bg-white overflow-hidden shadow-sm border border-gray-200 group-hover:shadow-2xl transition-all duration-300">
                     <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450&q=80"
                          alt="Electricals"
                          class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500">
                     <div class="p-5 text-center">
-                        <p class="font-semibold text-gray-800 text-lg">Electricals & Electronics</p>
+                        <p class="font-semibold text-gray-800 text-lg">Electricals</p>
                     </div>
                 </div>
             </a>
 
             <!-- 3. Hardware -->
             <a href="#" class="group flex-shrink-0 w-64 snap-start transition-all">
-                <div class="bg-white overflow-hidden shadow-sm border border-gray-100 group-hover:shadow-2xl transition-all duration-300">
+                <div class="bg-white overflow-hidden shadow-sm border border-gray-200 group-hover:shadow-2xl transition-all duration-300">
                     <img src="https://images.unsplash.com/photo-1581092160607-798aaaa2a9a4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450&q=80"
                          alt="Hardware"
                          class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500">
@@ -53,31 +52,31 @@
 
             <!-- 4. Outdoor -->
             <a href="#" class="group flex-shrink-0 w-64 snap-start transition-all">
-                <div class="bg-white overflow-hidden shadow-sm border border-gray-100 group-hover:shadow-2xl transition-all duration-300">
+                <div class="bg-white overflow-hidden shadow-sm border border-gray-200 group-hover:shadow-2xl transition-all duration-300">
                     <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450&q=80"
                          alt="Outdoor"
                          class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500">
                     <div class="p-5 text-center">
-                        <p class="font-semibold text-gray-800 text-lg">Outdoor Accessories</p>
+                        <p class="font-semibold text-gray-800 text-lg">Electronics</p>
                     </div>
                 </div>
             </a>
 
             <!-- 5. Camping -->
             <a href="#" class="group flex-shrink-0 w-64 snap-start transition-all">
-                <div class="bg-white overflow-hidden shadow-sm border border-gray-100 group-hover:shadow-2xl transition-all duration-300">
+                <div class="bg-white overflow-hidden shadow-sm border border-gray-200 group-hover:shadow-2xl transition-all duration-300">
                     <img src="https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450&q=80"
                          alt="Camping"
                          class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500">
                     <div class="p-5 text-center">
-                        <p class="font-semibold text-gray-800 text-lg">Camping Items</p>
+                        <p class="font-semibold text-gray-800 text-lg">Outdoor</p>
                     </div>
                 </div>
             </a>
 
-            <!-- 6. Vehicle Accessories -->
+            <!-- 6. Vehicle Accessories – now fully visible -->
             <a href="#" class="group flex-shrink-0 w-64 snap-start transition-all">
-                <div class="bg-white overflow-hidden shadow-sm border border-gray-100 group-hover:shadow-2xl transition-all duration-300">
+                <div class="bg-white overflow-hidden shadow-sm border border-gray-200 group-hover:shadow-2xl transition-all duration-300">
                     <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca5d5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450&q=80"
                          alt="Vehicle Accessories"
                          class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500">
