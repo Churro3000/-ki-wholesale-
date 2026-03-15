@@ -4,67 +4,110 @@
   <meta charset="UTF-8">
   <title>Top Products</title>
   <style>
-    /* Reset */
     body, h2, div {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    /* Section styling */
     .top-products-section {
-      background: #f4f4f7; /* very light neutral grey */
-      padding: 60px 40px;
-      text-align: center;
+      background: #f9f9fb; /* very light grey */
+      padding: 30px 20px; /* reduced margin above */
     }
 
     .top-products-section h2 {
-      font-size: 2.2em;
-      margin-bottom: 40px;
+      font-size: 2em;
+      margin-bottom: 20px;
       font-family: Arial, sans-serif;
       font-weight: bold;
-      color: #333;
+      color: #222;
+      text-align: left;
     }
 
     /* Product grid */
     .products-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 1px; /* strict 1px spacing between boxes */
+      gap: 0; /* no spacing between boxes */
     }
 
     .product-box {
-      background: #ffffff;
-      border: 2px solid #444; /* darker outline */
+      background: #fff;
+      border: 1px solid #bbb; /* lighter outline */
       text-align: center;
-      padding: 20px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding: 15px;
     }
 
     .product-box img {
       width: 100%;
-      height: 200px;
+      height: 220px;
       object-fit: cover;
       display: block;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
 
     .product-box h3 {
-      font-size: 1.2em;
-      margin-bottom: 10px;
+      font-size: 1.1em;
+      margin-bottom: 8px;
       color: #222;
       font-family: Arial, sans-serif;
     }
 
     .product-box p {
-      font-size: 0.95em;
+      font-size: 0.9em;
       color: #555;
-      margin-bottom: 15px;
     }
 
-    .product-box:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    /* Two horizontal boxes below */
+    .promo-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-top: 0; /* no space above */
+    }
+
+    .promo-image {
+      position: relative;
+    }
+
+    .promo-image img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .promo-text {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #fff;
+      font-size: 2em;
+      font-weight: bold;
+      text-align: right;
+      font-family: Arial, sans-serif;
+      line-height: 1.2;
+    }
+
+    .promo-box {
+      background: #c62828; /* nice red */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 300px;
+      text-align: center;
+    }
+
+    .promo-box span {
+      font-size: 2.5em;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+      line-height: 1.3;
+      color: #fff;
+    }
+
+    .promo-box span strong {
+      color: #ffeb3b; /* yellow highlight */
     }
   </style>
 </head>
@@ -73,35 +116,39 @@
   <section class="top-products-section">
     <h2>Top Products</h2>
     <div class="products-grid">
-      
-      <!-- Product 1 -->
       <div class="product-box">
         <img src="images/Angle_grinder.png" alt="Angle Grinder">
         <h3>Angle Grinder</h3>
         <p>Durable and powerful tool for cutting and grinding.</p>
       </div>
-
-      <!-- Product 2 -->
       <div class="product-box">
         <img src="images/Electric_drill550.png" alt="Electric Drill">
         <h3>Electric Drill</h3>
         <p>Reliable drill with multiple speed settings.</p>
       </div>
-
-      <!-- Product 3 -->
       <div class="product-box">
         <img src="images/Foot_pump1.png" alt="Foot Pump">
         <h3>Foot Pump</h3>
         <p>Compact and efficient pump for inflating tires.</p>
       </div>
-
-      <!-- Product 4 -->
       <div class="product-box">
         <img src="images/Household_item.png" alt="Household Item">
         <h3>Household Item</h3>
         <p>Essential everyday product for home use.</p>
       </div>
+    </div>
 
+    <!-- Promo row below -->
+    <div class="promo-row">
+      <!-- Left image with text -->
+      <div class="promo-image">
+        <img src="images/Outdoor_item.png" alt="Outdoor">
+        <div class="promo-text">RELIABLE,<br>OUTDOOR</div>
+      </div>
+      <!-- Right red box -->
+      <div class="promo-box">
+        <span><strong>SUMMER</strong><br>DEALS!</span>
+      </div>
     </div>
   </section>
 
