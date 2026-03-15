@@ -13,108 +13,97 @@
 
     /* Section styling */
     .top-products-section {
-      position: relative;
-      background: linear-gradient(135deg, #2e7d32, #388e3c);
-      color: white;
-      padding: 60px 20px;
+      background: #f4f4f7; /* very light neutral grey */
+      padding: 60px 40px;
       text-align: center;
-      overflow: hidden;
     }
 
     .top-products-section h2 {
-      font-size: 2em;
+      font-size: 2.2em;
       margin-bottom: 40px;
       font-family: Arial, sans-serif;
       font-weight: bold;
+      color: #333;
     }
 
-    /* Animated background effect */
-    .top-products-section::before {
-      content: "";
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(255,255,255,0.1) 20%, transparent 60%);
-      animation: moveBackground 12s linear infinite;
-      z-index: 0;
+    /* Product grid */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px; /* strict 1px spacing between boxes */
     }
 
-    @keyframes moveBackground {
-      0% { transform: translate(0,0); }
-      50% { transform: translate(60px,60px); }
-      100% { transform: translate(0,0); }
-    }
-
-    /* Product container */
-    .products-container {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      flex-wrap: wrap;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Product box styling */
     .product-box {
-      background: white;
-      color: #2e7d32;
-      padding: 20px;
-      width: 220px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      font-family: Arial, sans-serif;
-      font-weight: bold;
-      transition: transform 0.3s ease;
+      background: #ffffff;
+      border: 2px solid #444; /* darker outline */
       text-align: center;
-    }
-
-    .product-box:hover {
-      transform: translateY(-8px);
+      padding: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .product-box img {
       width: 100%;
-      height: 150px;
+      height: 200px;
       object-fit: cover;
-      border-radius: 6px;
+      display: block;
       margin-bottom: 15px;
     }
 
-    .product-title {
-      font-size: 1.1em;
+    .product-box h3 {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      color: #222;
+      font-family: Arial, sans-serif;
+    }
+
+    .product-box p {
+      font-size: 0.95em;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .product-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
     }
   </style>
 </head>
 <body>
-  <!-- Top Products Section -->
+
   <section class="top-products-section">
-    <h2>Our Top Products</h2>
-    <div class="products-container">
+    <h2>Top Products</h2>
+    <div class="products-grid">
+      
+      <!-- Product 1 -->
       <div class="product-box">
-        <img src="images/product1.jpg" alt="Product One">
-        <div class="product-title">Product One</div>
+        <img src="images/Angle_grinder.png" alt="Angle Grinder">
+        <h3>Angle Grinder</h3>
+        <p>Durable and powerful tool for cutting and grinding.</p>
       </div>
+
+      <!-- Product 2 -->
       <div class="product-box">
-        <img src="images/product2.jpg" alt="Product Two">
-        <div class="product-title">Product Two</div>
+        <img src="images/Electric_drill550.png" alt="Electric Drill">
+        <h3>Electric Drill</h3>
+        <p>Reliable drill with multiple speed settings.</p>
       </div>
+
+      <!-- Product 3 -->
       <div class="product-box">
-        <img src="images/product3.jpg" alt="Product Three">
-        <div class="product-title">Product Three</div>
+        <img src="images/Foot_pump1.png" alt="Foot Pump">
+        <h3>Foot Pump</h3>
+        <p>Compact and efficient pump for inflating tires.</p>
       </div>
+
+      <!-- Product 4 -->
       <div class="product-box">
-        <img src="images/product4.jpg" alt="Product Four">
-        <div class="product-title">Product Four</div>
+        <img src="images/Household_item.png" alt="Household Item">
+        <h3>Household Item</h3>
+        <p>Essential everyday product for home use.</p>
       </div>
+
     </div>
   </section>
 
-  <!-- Optional JS for future interactivity -->
-  <script>
-    // Currently unused, but you can add product carousel or dynamic loading here
-  </script>
 </body>
 </html>
