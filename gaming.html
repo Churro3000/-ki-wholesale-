@@ -201,23 +201,6 @@
     </div>
   </section>
 
-  <script>
-    let currentIndex = 0;
-    const track = document.getElementById('carouselTrack');
-    const productWidth = 295; // width + margin
-    const visibleProducts = 4; // show 4 at a time
-
-    function moveCarousel(direction) {
-      const totalProducts = track.children.length;
-      currentIndex += direction;
-      if (currentIndex < 0) currentIndex = 0;
-      if (currentIndex > totalProducts - visibleProducts) {
-        currentIndex = totalProducts - visibleProducts;
-      }
-      track.style.transform = `translateX(-${currentIndex * productWidth}px)`;
-    }
-  </script>
-
   <script src="gaming.js"></script>
 
 </body>
