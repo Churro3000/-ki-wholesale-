@@ -1,95 +1,89 @@
 <!-- bottom-categories.html -->
-<!-- Browse Categories section – centered, full-width fit, no cutoff -->
+<!-- Browse Categories section – full-width, left aligned, no cutoff -->
 
 <div class="bg-gray-50 py-12 border-t border-gray-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <!-- Title – left aligned -->
-        <h2 class="text-3xl font-semibold text-gray-900 mb-8 text-left">
-            Browse Categories
-        </h2>
-        
-        <!-- Horizontal row – centered, equal left/right space, tighter gap -->
-        <div class="flex justify-center gap-3 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide">
-            
-            <!-- 1. Household -->
-            <a href="#" class="group flex-shrink-0 w-64 snap-start transition-all">
-                <div class="bg-white overflow-hidden shadow-sm border border-gray-200 group-hover:shadow-xl transition-all duration-300">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a9c?auto=format&fit=crop&w=800&h=450&q=80"
-                         alt="Household"
-                         class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="p-5 text-center">
-                        <p class="font-semibold text-gray-800 text-lg">Household Items</p>
-                    </div>
-                </div>
-            </a>
+  <div class="max-w-7xl mx-auto">
 
-            <!-- 2. Electricals -->
-            <a href="#" class="group flex-shrink-0 w-64 snap-start transition-all">
-                <div class="bg-white overflow-hidden shadow-sm border border-gray-200 group-hover:shadow-xl transition-all duration-300">
-                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&h=450&q=80"
-                         alt="Electricals"
-                         class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="p-5 text-center">
-                        <p class="font-semibold text-gray-800 text-lg">Electricals</p>
-                    </div>
-                </div>
-            </a>
+    <!-- Title – left aligned -->
+    <h2 class="text-3xl font-semibold text-gray-900 mb-8 text-left">
+      Browse Categories
+    </h2>
 
-            <!-- 3. Hardware -->
-            <a href="#" class="group flex-shrink-0 w-64 snap-start transition-all">
-                <div class="bg-white overflow-hidden shadow-sm border border-gray-200 group-hover:shadow-xl transition-all duration-300">
-                    <img src="https://images.unsplash.com/photo-1581092160607-798aaaa2a9a4?auto=format&fit=crop&w=800&h=450&q=80"
-                         alt="Hardware"
-                         class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="p-5 text-center">
-                        <p class="font-semibold text-gray-800 text-lg">Hardware & Tools</p>
-                    </div>
-                </div>
-            </a>
+    <!-- Horizontal row – evenly spaced, flush left/right -->
+    <div class="flex flex-wrap lg:flex-nowrap justify-between gap-4">
 
-            <!-- 4. Outdoor -->
-            <a href="#" class="group flex-shrink-0 w-64 snap-start transition-all">
-                <div class="bg-white overflow-hidden shadow-sm border border-gray-200 group-hover:shadow-xl transition-all duration-300">
-                    <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=800&h=450&q=80"
-                         alt="Outdoor"
-                         class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="p-5 text-center">
-                        <p class="font-semibold text-gray-800 text-lg">Outdoor Accessories</p>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 5. Camping -->
-            <a href="#" class="group flex-shrink-0 w-64 snap-start transition-all">
-                <div class="bg-white overflow-hidden shadow-sm border border-gray-200 group-hover:shadow-xl transition-all duration-300">
-                    <img src="https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=800&h=450&q=80"
-                         alt="Camping"
-                         class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="p-5 text-center">
-                        <p class="font-semibold text-gray-800 text-lg">Camping Items</p>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 6. Vehicle Accessories – now fully visible -->
-            <a href="#" class="group flex-shrink-0 w-64 snap-start transition-all">
-                <div class="bg-white overflow-hidden shadow-sm border border-gray-200 group-hover:shadow-xl transition-all duration-300">
-                    <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca5d5f?auto=format&fit=crop&w=800&h=450&q=80"
-                         alt="Vehicle Accessories"
-                         class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="p-5 text-center">
-                        <p class="font-semibold text-gray-800 text-lg">Vehicle Accessories</p>
-                    </div>
-                </div>
-            </a>
-
+      <!-- 1. Household -->
+      <a href="#" class="group w-full sm:w-64 transition-all">
+        <div class="bg-white overflow-hidden shadow-sm border border-gray-200 group-hover:shadow-xl transition-all duration-300">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a9c?auto=format&fit=crop&w=800&h=450&q=80"
+               alt="Household"
+               class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="p-5 text-center">
+            <p class="font-semibold text-gray-800 text-lg">Household Items</p>
+          </div>
         </div>
-    </div>
-</div>
+      </a>
 
-<!-- Hide scrollbar -->
-<style>
-    .scrollbar-hide::-webkit-scrollbar { display: none !important; }
-    .scrollbar-hide { -ms-overflow-style: none !important; scrollbar-width: none !important; }
-</style>
+      <!-- 2. Electricals -->
+      <a href="#" class="group w-full sm:w-64 transition-all">
+        <div class="bg-white overflow-hidden shadow-sm border border-gray-200 group-hover:shadow-xl transition-all duration-300">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&h=450&q=80"
+               alt="Electricals"
+               class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="p-5 text-center">
+            <p class="font-semibold text-gray-800 text-lg">Electricals</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- 3. Hardware -->
+      <a href="#" class="group w-full sm:w-64 transition-all">
+        <div class="bg-white overflow-hidden shadow-sm border border-gray-200 group-hover:shadow-xl transition-all duration-300">
+          <img src="https://images.unsplash.com/photo-1581092160607-798aaaa2a9a4?auto=format&fit=crop&w=800&h=450&q=80"
+               alt="Hardware"
+               class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="p-5 text-center">
+            <p class="font-semibold text-gray-800 text-lg">Hardware & Tools</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- 4. Outdoor -->
+      <a href="#" class="group w-full sm:w-64 transition-all">
+        <div class="bg-white overflow-hidden shadow-sm border border-gray-200 group-hover:shadow-xl transition-all duration-300">
+          <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=800&h=450&q=80"
+               alt="Outdoor"
+               class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="p-5 text-center">
+            <p class="font-semibold text-gray-800 text-lg">Outdoor Accessories</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- 5. Camping -->
+      <a href="#" class="group w-full sm:w-64 transition-all">
+        <div class="bg-white overflow-hidden shadow-sm border border-gray-200 group-hover:shadow-xl transition-all duration-300">
+          <img src="https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=800&h=450&q=80"
+               alt="Camping"
+               class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="p-5 text-center">
+            <p class="font-semibold text-gray-800 text-lg">Camping Items</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- 6. Vehicle Accessories -->
+      <a href="#" class="group w-full sm:w-64 transition-all">
+        <div class="bg-white overflow-hidden shadow-sm border border-gray-200 group-hover:shadow-xl transition-all duration-300">
+          <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca5d5f?auto=format&fit=crop&w=800&h=450&q=80"
+               alt="Vehicle Accessories"
+               class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="p-5 text-center">
+            <p class="font-semibold text-gray-800 text-lg">Vehicle Accessories</p>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</div>
