@@ -176,43 +176,77 @@
  <script>
 "use strict";
 
-document.addEventListener("DOMContentLoaded", function () {
-    const track = document.getElementById("carouselTrack");
-    const leftArrow = document.getElementById("leftArrow");
-    const rightArrow = document.getElementById("rightArrow");
+// ==================== CAROUSEL SLIDING LOGIC (Adapted from your working repo) ====================
+const track = document.getElementById('carouselTrack');
+const leftArrow = document.getElementById('leftArrow');
+const rightArrow = document.getElementById('rightArrow');
 
-    const slideWidth = 295;
-    let currentIndex = 0;
+let currentPosition = 0;
 
-    function updateArrows() {
-        const total = track.children.length;
-        const maxIndex = total - 4;
+function getSlideWidth() {
+  const box = track.querySelector('.product-box');
+  if (!box) return 295;
+  const boxWidth = box.offsetWidth;
+  const gap = 15;
+  return boxWidth + gap;           // Move exactly one box at a time
+}
 
-        leftArrow.style.opacity = currentIndex <= 0 ? "0.4" : "1";
-        rightArrow.style.opacity = currentIndex >= maxIndex ? "0.4" : "1";
+function getMaxPosition() {
+  const totalWidth = track.scrollWidth;
+  const containerWidth = track.parentElement.offsetWidth;
+  let maxPos = containerWidth - totalWidth;
+  if (maxPos > 0) maxPos = 0;
+  return maxPos;
+}
 
-        leftArrow.style.pointerEvents = currentIndex <= 0 ? "none" : "auto";
-        rightArrow.style.pointerEvents = currentIndex >= maxIndex ? "none" : "auto";
-    }
+let maxPosition = getMaxPosition();
 
-    function moveCarousel(direction) {
-        const total = track.children.length;
-        const maxIndex = total - 4;
+// Recalculate on load and resize
+window.addEventListener('load', () => {
+  maxPosition = getMaxPosition();
+  updateArrows();
+});
 
-        currentIndex += direction;
+window.addEventListener('resize', () => {
+  maxPosition = getMaxPosition();
+  if (currentPosition < maxPosition) {
+    currentPosition = maxPosition;
+    track.style.transform = `translateX(${currentPosition}px)`;
+  }
+  updateArrows();
+});
 
-        if (currentIndex < 0) currentIndex = 0;
-        if (currentIndex > maxIndex) currentIndex = maxIndex;
+function updateArrows() {
+  leftArrow.style.opacity = currentPosition >= 0 ? '0.4' : '1';
+  rightArrow.style.opacity = currentPosition <= maxPosition ? '0.4' : '1';
 
-        track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-        updateArrows();
-    }
+  leftArrow.style.pointerEvents = currentPosition >= 0 ? 'none' : 'auto';
+  rightArrow.style.pointerEvents = currentPosition <= maxPosition ? 'none' : 'auto';
+}
 
-    leftArrow.addEventListener("click", () => moveCarousel(-1));
-    rightArrow.addEventListener("click", () => moveCarousel(1));
+rightArrow.addEventListener('click', () => {
+  const slide = getSlideWidth();
+  const proposed = currentPosition - slide;
+  maxPosition = getMaxPosition();
 
-    // Initial state
-    updateArrows();
+  currentPosition = Math.max(proposed, maxPosition);
+  track.style.transform = `translateX(${currentPosition}px)`;
+  updateArrows();
+});
+
+leftArrow.addEventListener('click', () => {
+  if (currentPosition >= 0) return;
+  const slide = getSlideWidth();
+  currentPosition += slide;
+  if (currentPosition > 0) currentPosition = 0;
+  track.style.transform = `translateX(${currentPosition}px)`;
+  updateArrows();
+});
+
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+  maxPosition = getMaxPosition();
+  updateArrows();
 });
  </script>
 
