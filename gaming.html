@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Gaming Section</title>
-  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body, h2, div {
@@ -20,7 +19,6 @@
       padding: 30px 20px;
       gap: 0;
     }
-    /* Left vertical image */
     .gaming-image {
       position: relative;
     }
@@ -39,7 +37,7 @@
       font-weight: bold;
       text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
     }
-    /* Right carousel */
+
     .carousel-container {
       position: relative;
       overflow: hidden;
@@ -89,35 +87,28 @@
       cursor: pointer;
       font-size: 1.2em;
     }
-    .cart-icon:hover {
-      background: darkorange;
-    }
-    /* Arrows */
+    .cart-icon:hover { background: darkorange; }
+
     .arrow {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
       font-size: 2em;
       color: #333;
-      background: rgba(255,255,255,0.8);
+      background: rgba(255,255,255,0.9);
       border: none;
       cursor: pointer;
       padding: 8px 12px;
       z-index: 10;
       border-radius: 50%;
     }
-    .arrow.left {
-      left: 10px;
-    }
-    .arrow.right {
-      right: 10px;
-    }
-    .arrow:hover {
-      background: rgba(255,255,255,1);
-    }
+    .arrow.left  { left: 10px; }
+    .arrow.right { right: 10px; }
+    .arrow:hover { background: white; }
   </style>
 </head>
 <body>
+
   <section class="gaming-section">
     <!-- Left vertical image -->
     <div class="gaming-image">
@@ -127,47 +118,42 @@
 
     <!-- Right carousel -->
     <div class="carousel-container">
-      <button class="arrow left">
+      <button class="arrow left" id="leftArrow">
         <i class="fas fa-chevron-left"></i>
       </button>
 
       <div class="carousel-track" id="carouselTrack">
-        <!-- Product 1 -->
+        <!-- Your products (kept same) -->
         <div class="product-box">
           <img src="images/game1.png" alt="Gaming Product 1">
           <h3>Gaming Mouse</h3>
           <p>High precision and ergonomic design.</p>
           <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
         </div>
-        <!-- Product 2 -->
         <div class="product-box">
           <img src="images/game2.png" alt="Gaming Product 2">
           <h3>Mechanical Keyboard</h3>
           <p>Responsive keys with RGB lighting.</p>
           <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
         </div>
-        <!-- Product 3 -->
         <div class="product-box">
           <img src="images/game3.png" alt="Gaming Product 3">
           <h3>Gaming Headset</h3>
           <p>Immersive sound and noise cancellation.</p>
           <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
         </div>
-        <!-- Product 4 -->
         <div class="product-box">
           <img src="images/game4.png" alt="Gaming Product 4">
           <h3>Graphics Card</h3>
           <p>Powerful performance for modern games.</p>
           <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
         </div>
-        <!-- Product 5 -->
         <div class="product-box">
           <img src="images/game5.png" alt="Gaming Product 5">
           <h3>Gaming Chair</h3>
           <p>Comfortable design for long sessions.</p>
           <div class="cart-icon"><i class="fas fa-shopping-cart"></i></div>
         </div>
-        <!-- Product 6 & 7 (you can add more) -->
         <div class="product-box">
           <img src="images/game5.png" alt="Gaming Product 6">
           <h3>Gaming Chair</h3>
@@ -182,7 +168,7 @@
         </div>
       </div>
 
-      <button class="arrow right">
+      <button class="arrow right" id="rightArrow">
         <i class="fas fa-chevron-right"></i>
       </button>
     </div>
